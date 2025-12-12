@@ -18,11 +18,10 @@ jobs:
           echo "============== REPO STRUCTURE =============="
           ls -R .
 
-
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v3
         with:
-          activate-environment: workflow_env
+          activate-environment: mlflow_env
           environment-file: MLProject/conda.yaml
           python-version: 3.10
 
