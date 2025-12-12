@@ -4,6 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import mlflow
 import mlflow.sklearn
+import os
 
 # Load dataset
 if __name__ == "__main__":
