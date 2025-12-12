@@ -29,4 +29,4 @@ jobs:
         run: pip install mlflow
 
       - name: Run MLflow Project
-        run: mlflow run ${{ github.workspace }}/MLProject
+        run: mlflow run MLProject
