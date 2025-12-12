@@ -13,6 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Debug folder structure
+        run: |
+          echo "============== REPO STRUCTURE =============="
+          ls -R .
+
+
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v3
         with:
