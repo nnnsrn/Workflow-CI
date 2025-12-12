@@ -1,7 +1,9 @@
 name: Run MLflow Project
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   run-mlflow:
@@ -11,21 +13,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Debug project structure (deep)
-        run: |
-          echo "ROOT:"
-          ls -R .
-
-
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v3
         with:
           activate-environment: workflow_env
-          environment-file: ${{ github.workspace }}/MLProject/conda.yaml
+          environment-file: MLProject/conda.yaml
           python-version: 3.10
 
       - name: Install MLflow
         run: pip install mlflow
 
       - name: Run MLflow Project
-        run: mlflow run MLProject
+        working-directory: MLProject
+        run: |
+          mlflow run .
