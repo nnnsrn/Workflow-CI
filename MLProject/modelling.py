@@ -6,7 +6,14 @@ import mlflow
 import mlflow.sklearn
 
 # Load dataset
-df = pd.read_csv("drug_dataset_preprocessing/train_clean.csv")
+if __name__ == "__main__":
+    data_path = "train_clean.csv" 
+    
+    if os.path.exists(data_path):
+        df = load_data(data_path)
+        train_model(df)
+    else:
+        print(f"Error: File tidak ditemukan di {data_path}")
 
 X = df.drop("Deposit", axis=1)
 y = df["Deposit"]
