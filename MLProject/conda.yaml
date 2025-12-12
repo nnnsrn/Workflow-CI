@@ -1,13 +1,13 @@
-name: mlflow_env
+name: drug_classification_project
 channels:
-  - conda-forge
+  - defaults
 dependencies:
   - python=3.10
   - pip
-  - scikit-learn
-  - pandas
-  - numpy
-  - matplotlib
-  - seaborn
   - pip:
-      - mlflow
+    - pandas
+    - numpy
+    - scikit-learn
+    - mlflow
+    - matplotlib
+    - seaborn
