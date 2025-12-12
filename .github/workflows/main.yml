@@ -1,0 +1,29 @@
+name: CI Pipeline for MLflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_mlflow_project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    # Install MLflow
+    - name: Install MLflow & Dependencies
+      run: |
+        pip install mlflow pandas numpy scikit-learn matplotlib seaborn
+
+    # Jalankan MLflow Project
+    - name: Run MLflow Project
+      run: |
+        mlflow run MLProject --no-conda
