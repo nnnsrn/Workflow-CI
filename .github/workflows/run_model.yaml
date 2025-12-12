@@ -11,12 +11,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Debug project structure
+      - name: Debug project structure (deep)
         run: |
-          echo "CURRENT DIR: $(pwd)"
-          ls -al
-          echo "---- MLProject folder ----"
-          ls -al MLProject
+          echo "ROOT:"
+          ls -R .
+
 
       - name: Set up Conda
         uses: conda-incubator/setup-miniconda@v3
