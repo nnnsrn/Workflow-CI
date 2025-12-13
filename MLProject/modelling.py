@@ -7,7 +7,7 @@ import mlflow.sklearn
 
 mlflow.set_experiment("Kriteria_2_Linear_Regression")
 
-df = pd.read_csv("drug_dataset_preprocessing/train_clean.csv")
+df = pd.read_csv("train_clean.csv")
 
 # choose a valid target column
 y = df["Effectiveness"]
